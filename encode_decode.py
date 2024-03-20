@@ -16,9 +16,15 @@ def encode(password):
     return encoded_password
 
 
-def decode(password):
+def decode(encoded_password):
     # TODO: Blas writes decode function
-    pass
+    decoded_password = ''
+    for char in encoded_password:
+        new_char_int = int(char) - 3
+        if new_char_int < 0:
+            new_char_int += 10
+        decoded_password += str(new_char_int)
+    return decoded_password
 
 
 def main():
